@@ -4,13 +4,14 @@ import {
   Lightbulb,
   ChevronRight 
 } from "lucide-react";
+import { AnimatedSection, AnimatedGroup } from "@/components/ui/animated-section";
 
 export default function About() {
   return (
     <section id="about" className="py-12 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center">
-          <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
+          <AnimatedSection variant="fadeInRight" className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
             <h2 className="text-3xl font-bold text-black">About Simple Commercial Capital</h2>
             <p className="mt-4 text-[#767676] text-lg">
               At Simple Commercial Capital, we believe that access to the right financing shouldn't be complicated. Our mission is to simplify the commercial financing process for businesses and investors by providing tailored solutions and expert guidance.
@@ -27,19 +28,26 @@ export default function About() {
                 <ChevronRight className="ml-2 h-5 w-5" />
               </a>
             </div>
-          </div>
-          <div className="lg:w-1/2">
+          </AnimatedSection>
+          
+          <AnimatedSection variant="fadeInLeft" delay={0.2} className="lg:w-1/2">
             <img 
               className="rounded-lg shadow-md w-full h-auto" 
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
               alt="Financial consultants meeting" 
             />
-          </div>
+          </AnimatedSection>
         </div>
 
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-black text-center mb-8">Our Values</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <AnimatedSection variant="fadeInUp" className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-black">Our Values</h3>
+          </AnimatedSection>
+          
+          <AnimatedGroup 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            staggerDelay={0.15}
+          >
             <div className="text-center">
               <div className="mx-auto bg-[#f5f5f5] rounded-full w-16 h-16 flex items-center justify-center mb-4">
                 <ShieldCheck className="h-8 w-8 text-black" />
@@ -69,7 +77,7 @@ export default function About() {
                 We constantly seek creative financing solutions to meet unique business challenges and opportunities.
               </p>
             </div>
-          </div>
+          </AnimatedGroup>
         </div>
       </div>
     </section>

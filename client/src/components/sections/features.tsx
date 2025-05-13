@@ -1,18 +1,23 @@
 import { DollarSign, Zap, Users } from "lucide-react";
+import { AnimatedSection, AnimatedGroup } from "@/components/ui/animated-section";
 
 export default function Features() {
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+        <AnimatedSection variant="fadeInUp" className="text-center">
           <h2 className="text-3xl font-bold text-black">Why Choose Us?</h2>
           <p className="mt-4 max-w-2xl text-xl text-[#767676] mx-auto">
             We pride ourselves on offering customized financing solutions with a simplified approach.
           </p>
-        </div>
+        </AnimatedSection>
 
         <div className="mt-10">
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatedGroup 
+            className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3"
+            staggerDelay={0.15}
+            delay={0.2}
+          >
             {/* Feature 1 */}
             <div className="bg-[#f5f5f5] rounded-lg p-6 hover:shadow-md transition-all">
               <div className="inline-flex items-center justify-center rounded-md bg-white p-3 shadow-lg">
@@ -45,7 +50,7 @@ export default function Features() {
                 Our experienced team provides personalized guidance to help you navigate complex financing decisions.
               </p>
             </div>
-          </div>
+          </AnimatedGroup>
         </div>
       </div>
     </section>

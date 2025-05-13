@@ -24,6 +24,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { AnimatedSection, AnimatedGroup } from "@/components/ui/animated-section";
 
 const contactFormSchema = z.object({
   firstName: z.string().min(2, "First name is required"),
