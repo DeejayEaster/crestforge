@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-4">Simple Commercial Capital</h3>
+            <h3 className="text-xl font-bold mb-4">Crestforge Capital</h3>
             <p className="text-gray-300 mb-4">
               Providing simplified commercial financing solutions for businesses and investors across the United States.
             </p>
@@ -57,7 +57,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-300 text-sm">
-            &copy; {currentYear} Simple Commercial Capital. All rights reserved.
+            &copy; {currentYear} Crestforge Capital. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 space-x-4 text-sm">
             <a href="#" className="text-gray-300 hover:text-white transition-all">Privacy Policy</a>

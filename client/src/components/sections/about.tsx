@@ -12,9 +12,9 @@ export default function About() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center">
           <AnimatedSection variant="fadeInRight" className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
-            <h2 className="text-3xl font-bold text-black">About Simple Commercial Capital</h2>
+            <h2 className="text-3xl font-bold text-black">About Crestforge Capital</h2>
             <p className="mt-4 text-[#767676] text-lg">
-              At Simple Commercial Capital, we believe that access to the right financing shouldn't be complicated. Our mission is to simplify the commercial financing process for businesses and investors by providing tailored solutions and expert guidance.
+              At Crestforge Capital, we believe that access to the right financing shouldn't be complicated. Our mission is to simplify the commercial financing process for businesses and investors by providing tailored solutions and expert guidance.
             </p>
             <p className="mt-4 text-[#767676] text-lg">
               Founded by industry veterans with decades of combined experience, we leverage our extensive network of lenders and deep understanding of financial markets to secure optimal funding options for our clients.

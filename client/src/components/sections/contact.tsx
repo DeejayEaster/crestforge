@@ -253,7 +253,7 @@ export default function Contact() {
               </div>
               <h4 className="text-lg font-medium text-black">Email</h4>
               <p className="mt-2 text-[#767676]">
-                info@simplecommercialcapital.com
+                info@crestforgecapital.com
               </p>
             </div>
 

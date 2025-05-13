@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 font-bold text-xl">
             <a href="#home" className="flex items-center">
-              Simple Commercial Capital
+              Crestforge Capital
             </a>
           </div>
           
