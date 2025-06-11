@@ -10,8 +10,8 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h3 className="font-display text-3xl font-bold mb-6 gold-accent">CRESTFORGE</h3>
             <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-md">
-              Where sophistication meets innovation. We craft extraordinary solutions 
-              that transform businesses and define industry standards.
+              We craft extraordinary solutions 
+              that transform businesses, define industry standards, and let you focus on getting more done.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white/60 hover:bg-accent hover:text-primary transition-all duration-300">

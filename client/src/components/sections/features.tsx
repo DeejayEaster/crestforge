@@ -5,35 +5,42 @@ export default function Features() {
   const features = [
     {
       icon: Diamond,
-      title: "Unparalleled Quality",
-      description: "Every solution is meticulously crafted with attention to the finest details, ensuring exceptional outcomes that exceed industry standards."
+      title: "Competitive Rates",
+      description:
+        "Tap our deep lender network—banks, life companies, agencies, and private credit—to secure industry-leading fixed or floating rates that protect cash flow and boost ROI."
     },
     {
       icon: Clock,
-      title: "Timeless Excellence",
-      description: "Our commitment to enduring quality means solutions that stand the test of time, providing lasting value for your investment."
+      title: "Fast Closings",
+      description:
+        "A dedicated deal team and streamlined underwriting push transactions across the finish line quickly—so you never miss a market window."
     },
     {
       icon: Users,
-      title: "Dedicated Partnership",
-      description: "Experience personalized service from a team of experts who understand your unique needs and are committed to your success."
+      title: "Sponsor-First Approach",
+      description:
+        "We underwrite your strategy, not just the asset, structuring terms that match your hold period, risk profile, and growth goals."
     },
     {
       icon: Award,
-      title: "Proven Leadership",
-      description: "Industry-recognized expertise and a track record of delivering transformative results for the most discerning clients."
+      title: "Proven Track Record",
+      description:
+        "Billions financed across multifamily, industrial, office, hospitality, and specialty assets—delivering repeat business from owners who trust our execution."
     },
     {
       icon: Shield,
-      title: "Absolute Reliability",
-      description: "Trust in our unwavering commitment to security, confidentiality, and delivering on every promise we make."
+      title: "Capital Certainty",
+      description:
+        "Long-standing relationships ensure committed capital even in volatile markets, giving you confidence from LOI to funding."
     },
     {
       icon: Sparkles,
-      title: "Innovative Vision",
-      description: "Stay ahead of the curve with cutting-edge solutions that anticipate tomorrow's challenges and opportunities."
+      title: "Creative Structures",
+      description:
+        "Bridge-to-perm, mezzanine, preferred equity, and construction loans—bespoke capital stacks that unlock value and expand possibilities."
     }
   ];
+
 
   return (
     <section id="features" className="section-padding bg-white">
@@ -42,11 +49,10 @@ export default function Features() {
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h2 className="font-display text-4xl lg:text-6xl font-bold text-primary mb-8">
               Why Choose{" "}
-              <span className="gold-accent italic">Excellence</span>
+              <span className="gold-accent italic">Us</span>
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Our distinguished approach combines traditional craftsmanship with modern innovation, 
-              delivering solutions that reflect the highest standards of quality and sophistication.
+              Our team tailors every debt structure to the sponsor’s unique objectives, leveraging trusted relationships with banks, life companies, agencies, and private lenders to secure optimal terms. From first conversation to final closing, Crestforge Capital forges the path to better outcomes—deal after deal, client after client.
             </p>
           </div>
         </AnimatedSection>
