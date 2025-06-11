@@ -27,7 +27,10 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
       
-
+      {/* Elegant grid overlay */}
+      <div className="absolute inset-0 opacity-5 z-10">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_35%,rgba(255,255,255,.1)_35%,rgba(255,255,255,.1)_65%,transparent_65%),linear-gradient(-45deg,transparent_35%,rgba(255,255,255,.1)_35%,rgba(255,255,255,.1)_65%,transparent_65%)] bg-[length:20px_20px]"></div>
+      </div>
       
       <div className="container-custom relative z-10">
         <div className="text-center max-w-5xl mx-auto">
