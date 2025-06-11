@@ -46,7 +46,7 @@ export default function Navbar() {
               onClick={() => scrollToSection('home')}
               className="font-display text-3xl font-bold text-primary tracking-tight hover:text-accent transition-colors duration-200"
             >
-              LUXE
+              CRESTFORGE
             </button>
           </div>
           

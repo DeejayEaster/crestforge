@@ -11,9 +11,24 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center luxury-gradient overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video 
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        >
+          <source src="https://videos.pexels.com/video-files/19912008/19912008-uhd_2560_1440_24fps.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+      
       {/* Elegant grid overlay */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 z-10">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_35%,rgba(255,255,255,.1)_35%,rgba(255,255,255,.1)_65%,transparent_65%),linear-gradient(-45deg,transparent_35%,rgba(255,255,255,.1)_35%,rgba(255,255,255,.1)_65%,transparent_65%)] bg-[length:20px_20px]"></div>
       </div>
       

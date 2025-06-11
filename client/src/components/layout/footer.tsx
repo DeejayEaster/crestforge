@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-2">
-            <h3 className="font-display text-3xl font-bold mb-6 gold-accent">LUXE</h3>
+            <h3 className="font-display text-3xl font-bold mb-6 gold-accent">CRESTFORGE</h3>
             <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-md">
               Where sophistication meets innovation. We craft extraordinary solutions 
               that transform businesses and define industry standards.
@@ -71,7 +71,7 @@ export default function Footer() {
         
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-white/60">
-            <p>&copy; {currentYear} LUXE. All rights reserved.</p>
+            <p>&copy; {currentYear} CRESTFORGE. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-accent transition-colors duration-200">Privacy Policy</a>
               <a href="#" className="hover:text-accent transition-colors duration-200">Terms of Service</a>

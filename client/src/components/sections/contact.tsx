@@ -57,12 +57,15 @@ export default function Contact() {
 
   const submitContact = useMutation({
     mutationFn: async (data: ContactFormValues) => {
-      const response = await apiRequest(`/api/contact`, {
+      const response = await fetch('/api/contact', {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },
       });
-      return response;
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+      return response.json();
     },
     onSuccess: () => {
       toast({
@@ -135,7 +138,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-1">Email</h4>
-                    <p className="text-slate-600">contact@luxe.com</p>
+                    <p className="text-slate-600">contact@crestforge.com</p>
                     <p className="text-sm text-slate-500">Response within 2 hours</p>
                   </div>
                 </div>
