@@ -70,7 +70,7 @@ export default function Hero() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-lg px-12 py-4 tracking-wider uppercase backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white/30 text-black bg-white/90 hover:bg-white hover:border-white text-lg px-12 py-4 tracking-wider uppercase backdrop-blur-sm transition-all duration-300"
                 onClick={() => scrollToSection('about')}
               >
                 Discover More
