@@ -88,11 +88,7 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/5 rounded-full"></div>
       </div>
       
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
-        <div className="w-px h-16 bg-gradient-to-b from-white/60 to-transparent mx-auto mb-2"></div>
-        <div className="text-xs tracking-widest uppercase">Scroll</div>
-      </div>
+
     </section>
   );
 }
