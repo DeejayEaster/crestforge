@@ -95,12 +95,12 @@ export default function Contact() {
         <AnimatedSection variant="fadeInUp">
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h2 className="font-display text-4xl lg:text-6xl font-bold text-primary mb-8">
-              Begin Your{" "}
-              <span className="gold-accent italic">Journey</span>
+              Get{" "}
+              <span className="gold-accent italic">Funded</span>
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Connect with our team of distinguished professionals to discuss how we can 
-              elevate your vision and create extraordinary results together.
+              Ready to secure the capital you need? Our experienced team is here to discuss 
+              your financing requirements and find the right solution for your project.
             </p>
           </div>
         </AnimatedSection>
@@ -111,12 +111,12 @@ export default function Contact() {
             <div className="space-y-8">
               <div>
                 <h3 className="font-display text-2xl font-bold text-primary mb-6">
-                  Get in Touch
+                  Contact Our Team
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-8">
-                  Experience the difference that personalized, premium service makes. 
-                  Our team is ready to understand your unique needs and deliver 
-                  solutions that exceed expectations.
+                  Our commercial lending specialists are ready to discuss your financing 
+                  needs and guide you through the application process. Get personalized 
+                  service and competitive terms for your next project.
                 </p>
               </div>
 

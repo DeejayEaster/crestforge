@@ -43,17 +43,17 @@ export default function Hero() {
           
           <AnimatedSection variant="fadeInUp" delay={0.4}>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold text-white mb-8 leading-tight">
-              Elevate Your{" "}
+              Capital That{" "}
               <span className="gold-accent italic">
-                Vision
+                Builds
               </span>
             </h1>
           </AnimatedSection>
           
           <AnimatedSection variant="fadeInUp" delay={0.6}>
             <p className="text-xl sm:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-              Where sophistication meets innovation. We craft extraordinary solutions 
-              that transform businesses and define industry standards.
+              Specialized commercial financing for construction, bridge loans, SBA products, 
+              and commercial real estate. Empowering businesses to grow and thrive.
             </p>
           </AnimatedSection>
           
@@ -64,7 +64,7 @@ export default function Hero() {
                 className="bg-accent hover:bg-accent/90 text-primary font-semibold text-lg px-12 py-4 tracking-wider uppercase shadow-2xl hover:shadow-accent/25 transition-all duration-300"
                 onClick={() => scrollToSection('contact')}
               >
-                Begin Journey
+                Get Financing
                 <ArrowRight className="ml-3 h-5 w-5" />
               </Button>
               <Button 

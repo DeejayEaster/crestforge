@@ -8,13 +8,13 @@ export default function About() {
         <AnimatedSection variant="fadeInUp">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="font-display text-4xl lg:text-6xl font-bold text-primary mb-8">
-              Crafting{" "}
-              <span className="gold-accent italic">Excellence</span>
+              Commercial Capital{" "}
+              <span className="gold-accent italic">Experts</span>
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed">
-              We are artisans of innovation, dedicated to creating bespoke solutions 
-              that transcend expectations and redefine industry standards through 
-              uncompromising quality and visionary leadership.
+              With decades of experience in commercial lending, we provide tailored financing 
+              solutions for construction projects, bridge loans, SBA products, and commercial 
+              real estate investments nationwide.
             </p>
           </div>
         </AnimatedSection>
@@ -25,12 +25,12 @@ export default function About() {
               <div className="space-y-8">
                 <div>
                   <h3 className="font-display text-3xl font-bold text-primary mb-6">
-                    Our Philosophy
+                    Our Approach
                   </h3>
                   <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                    Excellence is not a destination but a journey of continuous refinement. 
-                    We believe that true luxury lies in the perfect harmony of innovation, 
-                    craftsmanship, and unwavering attention to detail.
+                    We understand that every business has unique capital needs. Our team works 
+                    closely with you to structure financing solutions that align with your 
+                    project timelines, cash flow requirements, and growth objectives.
                   </p>
                 </div>
                 
@@ -40,8 +40,8 @@ export default function About() {
                       <Crown className="h-6 w-6 gold-accent" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-primary mb-2">Premium Standards</h4>
-                      <p className="text-slate-600">Every solution crafted to exceed the highest expectations</p>
+                      <h4 className="font-semibold text-primary mb-2">Competitive Rates</h4>
+                      <p className="text-slate-600">Access to multiple lending sources ensures optimal terms and rates</p>
                     </div>
                   </div>
                   
@@ -50,8 +50,8 @@ export default function About() {
                       <Shield className="h-6 w-6 gold-accent" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-primary mb-2">Trusted Partnership</h4>
-                      <p className="text-slate-600">Building enduring relationships through integrity and reliability</p>
+                      <h4 className="font-semibold text-primary mb-2">Proven Track Record</h4>
+                      <p className="text-slate-600">Decades of successful commercial lending and client relationships</p>
                     </div>
                   </div>
                   
@@ -60,8 +60,8 @@ export default function About() {
                       <Zap className="h-6 w-6 gold-accent" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-primary mb-2">Innovative Vision</h4>
-                      <p className="text-slate-600">Pioneering tomorrow's solutions with today's expertise</p>
+                      <h4 className="font-semibold text-primary mb-2">Fast Approvals</h4>
+                      <p className="text-slate-600">Streamlined processes to get your projects funded quickly</p>
                     </div>
                   </div>
                 </div>

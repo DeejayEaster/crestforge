@@ -5,46 +5,46 @@ export default function Services() {
   const services = [
     {
       icon: Crown,
-      title: "Strategic Consulting",
-      description: "Bespoke strategic guidance tailored to your unique vision and market position.",
+      title: "Commercial Real Estate",
+      description: "Comprehensive financing solutions for acquisition, refinancing, and development of commercial properties.",
       features: [
-        "Executive advisory services",
-        "Market analysis & positioning",
-        "Growth strategy development",
-        "Digital transformation roadmaps"
+        "Office buildings & retail centers",
+        "Industrial & warehouse properties",
+        "Multi-family apartment complexes",
+        "Hospitality & special purpose properties"
       ]
     },
     {
       icon: Gem,
-      title: "Premium Development",
-      description: "Cutting-edge solutions crafted with meticulous attention to detail and innovation.",
+      title: "Construction Loans",
+      description: "Flexible construction financing to support your development projects from ground breaking to completion.",
       features: [
-        "Custom software architecture",
-        "Advanced analytics platforms",
-        "Enterprise-grade security",
-        "Scalable cloud infrastructure"
+        "Ground-up construction",
+        "Renovation & rehabilitation",
+        "Spec building projects",
+        "Owner-occupied construction"
       ]
     },
     {
       icon: Palette,
-      title: "Brand Excellence",
-      description: "Sophisticated brand experiences that resonate with discerning audiences.",
+      title: "Bridge Loans",
+      description: "Fast, short-term financing solutions to bridge capital gaps and seize time-sensitive opportunities.",
       features: [
-        "Luxury brand identity design",
-        "Premium user experiences",
-        "Content strategy & creation",
-        "Multi-channel campaigns"
+        "Quick closing timelines",
+        "Asset-based underwriting",
+        "Flexible repayment terms",
+        "Nationwide coverage"
       ]
     },
     {
       icon: Cog,
-      title: "Operational Mastery",
-      description: "Streamlined operations that maximize efficiency while maintaining quality standards.",
+      title: "SBA Products",
+      description: "Government-backed loan programs designed to help small businesses access affordable capital.",
       features: [
-        "Process optimization",
-        "Automation implementation",
-        "Performance monitoring",
-        "Continuous improvement"
+        "SBA 504 loans",
+        "SBA 7(a) programs",
+        "Express loan options",
+        "Working capital solutions"
       ]
     }
   ];
@@ -55,12 +55,12 @@ export default function Services() {
         <AnimatedSection variant="fadeInUp">
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h2 className="font-display text-4xl lg:text-6xl font-bold text-primary mb-8">
-              Exceptional{" "}
-              <span className="gold-accent italic">Services</span>
+              Financing{" "}
+              <span className="gold-accent italic">Solutions</span>
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed">
-              We deliver comprehensive solutions that elevate your business to new heights of success. 
-              Each service is meticulously crafted to exceed expectations and drive extraordinary results.
+              Comprehensive commercial capital solutions tailored to your business needs. 
+              From construction projects to commercial real estate, we provide the funding to fuel your growth.
             </p>
           </div>
         </AnimatedSection>
@@ -105,7 +105,7 @@ export default function Services() {
           <div className="text-center mt-16">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-accent/10 border border-accent/20">
               <span className="text-slate-700 font-medium">
-                Ready to transform your business? Let's discuss your vision.
+                Ready to secure funding for your next project? Let's discuss your capital needs.
               </span>
             </div>
           </div>
