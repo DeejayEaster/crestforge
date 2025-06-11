@@ -1,177 +1,115 @@
-import { 
-  Building2, 
-  Briefcase, 
-  Home, 
-  LineChart, 
-  ChevronRight,
-  Check 
-} from "lucide-react";
-import { AnimatedSection, AnimatedGroup } from "@/components/ui/animated-section";
+import { Gem, Crown, Palette, Cog } from "lucide-react";
+import { AnimatedSection } from "@/components/ui/animated-section";
 
 export default function Services() {
+  const services = [
+    {
+      icon: Crown,
+      title: "Strategic Consulting",
+      description: "Bespoke strategic guidance tailored to your unique vision and market position.",
+      features: [
+        "Executive advisory services",
+        "Market analysis & positioning",
+        "Growth strategy development",
+        "Digital transformation roadmaps"
+      ]
+    },
+    {
+      icon: Gem,
+      title: "Premium Development",
+      description: "Cutting-edge solutions crafted with meticulous attention to detail and innovation.",
+      features: [
+        "Custom software architecture",
+        "Advanced analytics platforms",
+        "Enterprise-grade security",
+        "Scalable cloud infrastructure"
+      ]
+    },
+    {
+      icon: Palette,
+      title: "Brand Excellence",
+      description: "Sophisticated brand experiences that resonate with discerning audiences.",
+      features: [
+        "Luxury brand identity design",
+        "Premium user experiences",
+        "Content strategy & creation",
+        "Multi-channel campaigns"
+      ]
+    },
+    {
+      icon: Cog,
+      title: "Operational Mastery",
+      description: "Streamlined operations that maximize efficiency while maintaining quality standards.",
+      features: [
+        "Process optimization",
+        "Automation implementation",
+        "Performance monitoring",
+        "Continuous improvement"
+      ]
+    }
+  ];
+
   return (
-    <section id="services" className="py-12 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection variant="fadeInUp" className="text-center">
-          <h2 className="text-3xl font-bold text-black">Our Services</h2>
-          <p className="mt-4 max-w-2xl text-xl text-[#767676] mx-auto">
-            Comprehensive financing solutions tailored to your business needs.
-          </p>
+    <section id="services" className="section-padding bg-slate-50">
+      <div className="container-custom">
+        <AnimatedSection variant="fadeInUp">
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            <h2 className="font-display text-4xl lg:text-6xl font-bold text-primary mb-8">
+              Exceptional{" "}
+              <span className="gold-accent italic">Services</span>
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed">
+              We deliver comprehensive solutions that elevate your business to new heights of success. 
+              Each service is meticulously crafted to exceed expectations and drive extraordinary results.
+            </p>
+          </div>
         </AnimatedSection>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-          {/* Service 1 */}
-          <AnimatedSection variant="fadeInUp" delay={0.1} duration={0.6}>
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all">
-              <img 
-                className="h-48 w-full object-cover" 
-                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=384" 
-                alt="Commercial real estate property" 
-              />
-              <div className="p-6">
-                <div className="flex items-center mb-2">
-                  <Building2 className="h-5 w-5 mr-2 text-black" />
-                  <h3 className="text-xl font-bold text-black">Commercial Real Estate Loans</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <AnimatedSection 
+              key={service.title}
+              variant="fadeInUp" 
+              delay={index * 0.1}
+            >
+              <div className="bg-white rounded-3xl p-8 border border-slate-200 hover:shadow-2xl hover:border-accent/20 transition-all duration-500 group">
+                <div className="flex items-start space-x-6">
+                  <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300">
+                    <service.icon className="h-8 w-8 gold-accent" />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h3 className="font-display text-2xl font-bold text-primary mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                    
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-slate-600">
+                          <div className="w-2 h-2 rounded-full bg-accent mr-3 flex-shrink-0"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <p className="mt-2 text-[#767676]">
-                  Financing solutions for acquisition, refinancing, and development of commercial properties including:
-                </p>
-                <ul className="mt-4 space-y-2 text-[#767676]">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Office buildings, retail centers, and industrial properties</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Multi-family apartment complexes</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Hospitality and special purpose properties</span>
-                  </li>
-                </ul>
-                <a href="#contact" className="mt-6 inline-flex items-center text-black font-medium hover:underline">
-                  Learn More
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </a>
               </div>
-            </div>
-          </AnimatedSection>
-
-          {/* Service 2 */}
-          <AnimatedSection variant="fadeInUp" delay={0.2} duration={0.6}>
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all">
-              <img 
-                className="h-48 w-full object-cover" 
-                src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=384" 
-                alt="Business funding consultation" 
-              />
-              <div className="p-6">
-                <div className="flex items-center mb-2">
-                  <Briefcase className="h-5 w-5 mr-2 text-black" />
-                  <h3 className="text-xl font-bold text-black">Business Funding Solutions</h3>
-                </div>
-                <p className="mt-2 text-[#767676]">
-                  Flexible funding options to help businesses grow, expand, and manage cash flow:
-                </p>
-                <ul className="mt-4 space-y-2 text-[#767676]">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>SBA loans and conventional business loans</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Equipment financing and working capital</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Merchant cash advances and invoice factoring</span>
-                  </li>
-                </ul>
-                <a href="#contact" className="mt-6 inline-flex items-center text-black font-medium hover:underline">
-                  Learn More
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </a>
-              </div>
-            </div>
-          </AnimatedSection>
-
-          {/* Service 3 */}
-          <AnimatedSection variant="fadeInUp" delay={0.3} duration={0.6}>
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all">
-              <img 
-                className="h-48 w-full object-cover" 
-                src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=384" 
-                alt="Investment property" 
-              />
-              <div className="p-6">
-                <div className="flex items-center mb-2">
-                  <Home className="h-5 w-5 mr-2 text-black" />
-                  <h3 className="text-xl font-bold text-black">Investment Property Financing</h3>
-                </div>
-                <p className="mt-2 text-[#767676]">
-                  Specialized loan programs for investors looking to expand their real estate portfolios:
-                </p>
-                <ul className="mt-4 space-y-2 text-[#767676]">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Fix and flip loans for residential properties</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Long-term rental property financing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Portfolio loans for multiple properties</span>
-                  </li>
-                </ul>
-                <a href="#contact" className="mt-6 inline-flex items-center text-black font-medium hover:underline">
-                  Learn More
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </a>
-              </div>
-            </div>
-          </AnimatedSection>
-
-          {/* Service 4 */}
-          <AnimatedSection variant="fadeInUp" delay={0.4} duration={0.6}>
-            <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all">
-              <img 
-                className="h-48 w-full object-cover" 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=384" 
-                alt="Financial consulting session" 
-              />
-              <div className="p-6">
-                <div className="flex items-center mb-2">
-                  <LineChart className="h-5 w-5 mr-2 text-black" />
-                  <h3 className="text-xl font-bold text-black">Financial Advisory Services</h3>
-                </div>
-                <p className="mt-2 text-[#767676]">
-                  Expert guidance to optimize your financing strategy and improve business outcomes:
-                </p>
-                <ul className="mt-4 space-y-2 text-[#767676]">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Business financial planning and analysis</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Debt restructuring and refinancing strategies</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-black mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Investment property portfolio optimization</span>
-                  </li>
-                </ul>
-                <a href="#contact" className="mt-6 inline-flex items-center text-black font-medium hover:underline">
-                  Learn More
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </a>
-              </div>
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+          ))}
         </div>
+
+        <AnimatedSection variant="fadeInUp" delay={0.6}>
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-accent/10 border border-accent/20">
+              <span className="text-slate-700 font-medium">
+                Ready to transform your business? Let's discuss your vision.
+              </span>
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

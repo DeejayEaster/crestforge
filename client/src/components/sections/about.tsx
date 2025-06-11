@@ -1,83 +1,109 @@
-import { 
-  ShieldCheck, 
-  Zap, 
-  Lightbulb,
-  ChevronRight 
-} from "lucide-react";
-import { AnimatedSection, AnimatedGroup } from "@/components/ui/animated-section";
+import { Crown, Shield, Zap, Star } from "lucide-react";
+import { AnimatedSection } from "@/components/ui/animated-section";
 
 export default function About() {
   return (
-    <section id="about" className="py-12 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center">
-          <AnimatedSection variant="fadeInRight" className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
-            <h2 className="text-3xl font-bold text-black">About Crestforge Capital</h2>
-            <p className="mt-4 text-[#767676] text-lg">
-              At Crestforge Capital, we believe that access to the right financing shouldn't be complicated. Our mission is to simplify the commercial financing process for businesses and investors by providing tailored solutions and expert guidance.
+    <section id="about" className="section-padding bg-white">
+      <div className="container-custom">
+        <AnimatedSection variant="fadeInUp">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="font-display text-4xl lg:text-6xl font-bold text-primary mb-8">
+              Crafting{" "}
+              <span className="gold-accent italic">Excellence</span>
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed">
+              We are artisans of innovation, dedicated to creating bespoke solutions 
+              that transcend expectations and redefine industry standards through 
+              uncompromising quality and visionary leadership.
             </p>
-            <p className="mt-4 text-[#767676] text-lg">
-              Founded by industry veterans with decades of combined experience, we leverage our extensive network of lenders and deep understanding of financial markets to secure optimal funding options for our clients.
-            </p>
-            <p className="mt-4 text-[#767676] text-lg">
-              Our approach is consultative and relationship-focused. We take the time to understand your specific needs and goals before recommending personalized financing strategies that align with your long-term objectives.
-            </p>
-            <div className="mt-6">
-              <a href="#contact" className="inline-flex items-center text-black font-medium hover:underline">
-                Get in Touch
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </a>
-            </div>
-          </AnimatedSection>
-          
-          <AnimatedSection variant="fadeInLeft" delay={0.2} className="lg:w-1/2">
-            <img 
-              className="rounded-lg shadow-md w-full h-auto" 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Financial consultants meeting" 
-            />
-          </AnimatedSection>
-        </div>
+          </div>
+        </AnimatedSection>
 
-        <div className="mt-16">
-          <AnimatedSection variant="fadeInUp" className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-black">Our Values</h3>
-          </AnimatedSection>
-          
-          <AnimatedGroup 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            staggerDelay={0.15}
-          >
-            <div className="text-center">
-              <div className="mx-auto bg-[#f5f5f5] rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                <ShieldCheck className="h-8 w-8 text-black" />
+        <div className="mt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection variant="fadeInLeft">
+              <div className="space-y-8">
+                <div>
+                  <h3 className="font-display text-3xl font-bold text-primary mb-6">
+                    Our Philosophy
+                  </h3>
+                  <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                    Excellence is not a destination but a journey of continuous refinement. 
+                    We believe that true luxury lies in the perfect harmony of innovation, 
+                    craftsmanship, and unwavering attention to detail.
+                  </p>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Crown className="h-6 w-6 gold-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary mb-2">Premium Standards</h4>
+                      <p className="text-slate-600">Every solution crafted to exceed the highest expectations</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-6 w-6 gold-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary mb-2">Trusted Partnership</h4>
+                      <p className="text-slate-600">Building enduring relationships through integrity and reliability</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Zap className="h-6 w-6 gold-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary mb-2">Innovative Vision</h4>
+                      <p className="text-slate-600">Pioneering tomorrow's solutions with today's expertise</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h4 className="text-xl font-medium text-black">Integrity</h4>
-              <p className="mt-2 text-[#767676]">
-                We build relationships based on trust and always put our clients' best interests first.
-              </p>
-            </div>
+            </AnimatedSection>
 
-            <div className="text-center">
-              <div className="mx-auto bg-[#f5f5f5] rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                <Zap className="h-8 w-8 text-black" />
+            <AnimatedSection variant="fadeInRight">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Star className="h-8 w-8 gold-accent" />
+                  </div>
+                  <h4 className="font-display text-3xl font-bold text-primary mb-2">500+</h4>
+                  <p className="text-slate-600 font-medium">Distinguished Clients</p>
+                </div>
+                
+                <div className="text-center p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Crown className="h-8 w-8 gold-accent" />
+                  </div>
+                  <h4 className="font-display text-3xl font-bold text-primary mb-2">15+</h4>
+                  <p className="text-slate-600 font-medium">Years of Excellence</p>
+                </div>
+                
+                <div className="text-center p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Shield className="h-8 w-8 gold-accent" />
+                  </div>
+                  <h4 className="font-display text-3xl font-bold text-primary mb-2">99.9%</h4>
+                  <p className="text-slate-600 font-medium">Client Satisfaction</p>
+                </div>
+                
+                <div className="text-center p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Zap className="h-8 w-8 gold-accent" />
+                  </div>
+                  <h4 className="font-display text-3xl font-bold text-primary mb-2">24/7</h4>
+                  <p className="text-slate-600 font-medium">Premium Support</p>
+                </div>
               </div>
-              <h4 className="text-xl font-medium text-black">Efficiency</h4>
-              <p className="mt-2 text-[#767676]">
-                We streamline complex processes to save you time and get you the funding you need when you need it.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mx-auto bg-[#f5f5f5] rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                <Lightbulb className="h-8 w-8 text-black" />
-              </div>
-              <h4 className="text-xl font-medium text-black">Innovation</h4>
-              <p className="mt-2 text-[#767676]">
-                We constantly seek creative financing solutions to meet unique business challenges and opportunities.
-              </p>
-            </div>
-          </AnimatedGroup>
+            </AnimatedSection>
+          </div>
         </div>
       </div>
     </section>

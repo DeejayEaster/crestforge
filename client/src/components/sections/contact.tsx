@@ -23,8 +23,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Phone, Mail, MapPin } from "lucide-react";
-import { AnimatedSection, AnimatedGroup } from "@/components/ui/animated-section";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { AnimatedSection } from "@/components/ui/animated-section";
 
 const contactFormSchema = z.object({
   firstName: z.string().min(2, "First name is required"),
@@ -52,24 +52,29 @@ export default function Contact() {
       company: "",
       service: "",
       message: ""
-    },
+    }
   });
 
   const submitContact = useMutation({
     mutationFn: async (data: ContactFormValues) => {
-      return await apiRequest("POST", "/api/contact", data);
+      const response = await apiRequest(`/api/contact`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+      });
+      return response;
     },
     onSuccess: () => {
       toast({
-        title: "Message Sent",
-        description: "Thank you for your inquiry. We'll be in touch soon.",
+        title: "Message sent successfully!",
+        description: "We'll get back to you as soon as possible.",
       });
       form.reset();
     },
-    onError: (error) => {
+    onError: (error: any) => {
       toast({
-        title: "Error",
-        description: error.message || "There was an error submitting your inquiry. Please try again.",
+        title: "Error sending message",
+        description: error.message || "Please try again later.",
         variant: "destructive",
       });
     },
@@ -82,193 +87,229 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-12 bg-[#f5f5f5]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <AnimatedSection variant="fadeInUp" className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-black">Contact Us</h2>
-            <p className="mt-4 text-xl text-[#767676]">
-              Ready to discuss your financing needs? Reach out to our team of experts today.
+    <section id="contact" className="section-padding bg-white">
+      <div className="container-custom">
+        <AnimatedSection variant="fadeInUp">
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            <h2 className="font-display text-4xl lg:text-6xl font-bold text-primary mb-8">
+              Begin Your{" "}
+              <span className="gold-accent italic">Journey</span>
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed">
+              Connect with our team of distinguished professionals to discuss how we can 
+              elevate your vision and create extraordinary results together.
             </p>
-          </AnimatedSection>
+          </div>
+        </AnimatedSection>
 
-          <AnimatedSection variant="fadeInUp" delay={0.2} duration={0.6}>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="p-6 sm:p-8">
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <FormField
-                        control={form.control}
-                        name="firstName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>First Name</FormLabel>
-                            <FormControl>
-                              <Input placeholder="John" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="lastName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Last Name</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Doe" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                              <Input placeholder="john.doe@example.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Phone</FormLabel>
-                            <FormControl>
-                              <Input placeholder="(555) 123-4567" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                    
-                    <div className="sm:col-span-2">
-                      <FormField
-                        control={form.control}
-                        name="company"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Company/Organization</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Your Company Name" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                    
-                    <div className="sm:col-span-2">
-                      <FormField
-                        control={form.control}
-                        name="service"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Interested Service</FormLabel>
-                            <Select 
-                              onValueChange={field.onChange} 
-                              defaultValue={field.value}
-                            >
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select a service" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="commercial-real-estate">Commercial Real Estate Loans</SelectItem>
-                                <SelectItem value="business-funding">Business Funding Solutions</SelectItem>
-                                <SelectItem value="investment-property">Investment Property Financing</SelectItem>
-                                <SelectItem value="advisory">Financial Advisory Services</SelectItem>
-                                <SelectItem value="other">Other</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                    
-                    <div className="sm:col-span-2">
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Message</FormLabel>
-                            <FormControl>
-                              <Textarea 
-                                placeholder="Tell us about your financing needs" 
-                                className="resize-none" 
-                                rows={4}
-                                {...field} 
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                    
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-black text-white hover:bg-[#333333]"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-                    </Button>
-                  </form>
-                </Form>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Contact Information */}
+          <AnimatedSection variant="fadeInLeft" className="lg:col-span-1">
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-display text-2xl font-bold text-primary mb-6">
+                  Get in Touch
+                </h3>
+                <p className="text-slate-600 leading-relaxed mb-8">
+                  Experience the difference that personalized, premium service makes. 
+                  Our team is ready to understand your unique needs and deliver 
+                  solutions that exceed expectations.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 gold-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-1">Phone</h4>
+                    <p className="text-slate-600">+1 (555) 123-4567</p>
+                    <p className="text-sm text-slate-500">Available 24/7</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 gold-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-1">Email</h4>
+                    <p className="text-slate-600">contact@luxe.com</p>
+                    <p className="text-sm text-slate-500">Response within 2 hours</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 gold-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-1">Office</h4>
+                    <p className="text-slate-600">
+                      One World Trade Center<br />
+                      Suite 4000<br />
+                      New York, NY 10007
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimatedSection>
 
-          <AnimatedGroup
-            className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
-            staggerDelay={0.15}
-            delay={0.3}
-          >
-            <div className="text-center">
-              <div className="mx-auto bg-white rounded-full w-12 h-12 flex items-center justify-center mb-4 shadow-sm">
-                <Phone className="h-6 w-6 text-black" />
-              </div>
-              <h4 className="text-lg font-medium text-black">Phone</h4>
-              <p className="mt-2 text-[#767676]">
-                (555) 123-4567
-              </p>
+          {/* Contact Form */}
+          <AnimatedSection variant="fadeInRight" delay={0.2} className="lg:col-span-2">
+            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200">
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="firstName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-primary font-semibold">First Name</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="Enter your first name" 
+                              className="border-slate-300 focus:border-accent focus:ring-accent/20 bg-white" 
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-primary font-semibold">Last Name</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="Enter your last name" 
+                              className="border-slate-300 focus:border-accent focus:ring-accent/20 bg-white" 
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-primary font-semibold">Email Address</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="your.email@company.com" 
+                              className="border-slate-300 focus:border-accent focus:ring-accent/20 bg-white" 
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-primary font-semibold">Phone Number</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="+1 (555) 123-4567" 
+                              className="border-slate-300 focus:border-accent focus:ring-accent/20 bg-white" 
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="company"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-primary font-semibold">Company</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="Your company name" 
+                              className="border-slate-300 focus:border-accent focus:ring-accent/20 bg-white" 
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="service"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-primary font-semibold">Service Interest</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="border-slate-300 focus:border-accent focus:ring-accent/20 bg-white">
+                                <SelectValue placeholder="Select a service" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="strategic-consulting">Strategic Consulting</SelectItem>
+                              <SelectItem value="premium-development">Premium Development</SelectItem>
+                              <SelectItem value="brand-excellence">Brand Excellence</SelectItem>
+                              <SelectItem value="operational-mastery">Operational Mastery</SelectItem>
+                              <SelectItem value="consultation">Executive Consultation</SelectItem>
+                              <SelectItem value="other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary font-semibold">Message</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Tell us about your vision and how we can help bring it to life..." 
+                            className="resize-none border-slate-300 focus:border-accent focus:ring-accent/20 bg-white" 
+                            rows={5}
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-accent hover:bg-accent/90 text-primary font-semibold py-4 text-lg tracking-wider uppercase shadow-xl hover:shadow-2xl transition-all duration-300"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : (
+                      <>
+                        Send Message
+                        <Send className="ml-2 h-5 w-5" />
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </Form>
             </div>
-
-            <div className="text-center">
-              <div className="mx-auto bg-white rounded-full w-12 h-12 flex items-center justify-center mb-4 shadow-sm">
-                <Mail className="h-6 w-6 text-black" />
-              </div>
-              <h4 className="text-lg font-medium text-black">Email</h4>
-              <p className="mt-2 text-[#767676]">
-                info@crestforgecapital.com
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mx-auto bg-white rounded-full w-12 h-12 flex items-center justify-center mb-4 shadow-sm">
-                <MapPin className="h-6 w-6 text-black" />
-              </div>
-              <h4 className="text-lg font-medium text-black">Office</h4>
-              <p className="mt-2 text-[#767676]">
-                123 Financial District<br />
-                Suite 400<br />
-                San Francisco, CA 94111
-              </p>
-            </div>
-          </AnimatedGroup>
+          </AnimatedSection>
         </div>
       </div>
     </section>
