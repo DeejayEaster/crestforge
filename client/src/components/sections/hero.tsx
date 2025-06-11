@@ -51,9 +51,9 @@ export default function Hero() {
           </AnimatedSection>
           
           <AnimatedSection variant="fadeInUp" delay={0.6}>
-            <p className="text-xl sm:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-              Specialized commercial financing for construction, bridge loans, SBA products, 
-              and commercial real estate. Empowering businesses to grow and thrive.
+            <p className="text-xl sm:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+              Specialized commercial financing for construction, bridge loans, SBA products, and commercial real estate.<br />
+              Empowering businesses to grow and thrive.
             </p>
           </AnimatedSection>
           
