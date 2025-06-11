@@ -264,11 +264,11 @@ export default function Contact() {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value="strategic-consulting">Strategic Consulting</SelectItem>
-                              <SelectItem value="premium-development">Premium Development</SelectItem>
-                              <SelectItem value="brand-excellence">Brand Excellence</SelectItem>
-                              <SelectItem value="operational-mastery">Operational Mastery</SelectItem>
-                              <SelectItem value="consultation">Executive Consultation</SelectItem>
+                              <SelectItem value="commercial-real-estate">Commercial Real Estate</SelectItem>
+                              <SelectItem value="construction-loan">Construction Loan</SelectItem>
+                              <SelectItem value="bridge-loan">Bridge Loan</SelectItem>
+                              <SelectItem value="sba-product">SBA Product</SelectItem>
+                              <SelectItem value="consultation">Free Consultation</SelectItem>
                               <SelectItem value="other">Other</SelectItem>
                             </SelectContent>
                           </Select>
@@ -286,7 +286,7 @@ export default function Contact() {
                         <FormLabel className="text-primary font-semibold">Message</FormLabel>
                         <FormControl>
                           <Textarea 
-                            placeholder="Tell us about your vision and how we can help bring it to life..." 
+                            placeholder="Tell us about your project details, loan amount needed, timeline, and any specific requirements..." 
                             className="resize-none border-slate-300 focus:border-accent focus:ring-accent/20 bg-white" 
                             rows={5}
                             {...field} 
