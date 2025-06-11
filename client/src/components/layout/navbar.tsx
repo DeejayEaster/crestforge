@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,58 +25,113 @@ export default function Navbar() {
     };
   }, []);
 
-  const closeMenu = () => {
-    setIsOpen(false);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+    }
   };
 
   return (
-    <header id="home" className={`fixed w-full z-50 transition-shadow ${scrolled ? 'bg-white shadow-sm' : 'bg-white'}`}>
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0 font-bold text-xl">
-            <a href="#home" className="flex items-center">
-              Crestforge Capital
-            </a>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white/95 backdrop-blur-sm shadow-lg border-b border-slate-200' 
+        : 'bg-white/95 backdrop-blur-sm'
+    }`}>
+      <nav className="container-custom">
+        <div className="flex justify-between items-center h-20">
+          <div className="flex-shrink-0">
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="font-display text-3xl font-bold text-primary tracking-tight hover:text-accent transition-colors duration-200"
+            >
+              LUXE
+            </button>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
-              <a href="#home" className="text-black hover:text-[#767676] transition-all font-medium">Home</a>
-              <a href="#services" className="text-black hover:text-[#767676] transition-all font-medium">Services</a>
-              <a href="#about" className="text-black hover:text-[#767676] transition-all font-medium">About</a>
-              <a href="#contact" className="text-black hover:text-[#767676] transition-all font-medium">Contact</a>
-              <a href="#contact">
-                <Button className="bg-black text-white hover:bg-[#333333]">
-                  Get Started
-                </Button>
-              </a>
+              <button
+                onClick={() => scrollToSection('about')}
+                className="text-slate-600 hover:text-primary font-medium text-sm tracking-wider transition-colors duration-200 uppercase"
+              >
+                About
+              </button>
+              <button
+                onClick={() => scrollToSection('services')}
+                className="text-slate-600 hover:text-primary font-medium text-sm tracking-wider transition-colors duration-200 uppercase"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => scrollToSection('features')}
+                className="text-slate-600 hover:text-primary font-medium text-sm tracking-wider transition-colors duration-200 uppercase"
+              >
+                Features
+              </button>
+              <button
+                onClick={() => scrollToSection('testimonials')}
+                className="text-slate-600 hover:text-primary font-medium text-sm tracking-wider transition-colors duration-200 uppercase"
+              >
+                Testimonials
+              </button>
+              <Button
+                onClick={() => scrollToSection('contact')}
+                className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-3 text-sm tracking-wider uppercase transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                Contact
+              </Button>
             </div>
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button 
-              type="button" 
+            <button
               onClick={toggleMenu}
-              className="text-gray-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
+              className="text-slate-600 hover:text-primary p-2 transition-colors duration-200"
             >
-              <span className="sr-only">Open main menu</span>
-              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
         
         {/* Mobile Navigation */}
-        <div className={`md:hidden bg-white border-t border-gray-200 ${isOpen ? 'block' : 'hidden'}`}>
-          <div className="pt-2 pb-3 space-y-1 px-2">
-            <a href="#home" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-black hover:bg-[#f5f5f5] transition-all">Home</a>
-            <a href="#services" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-black hover:bg-[#f5f5f5] transition-all">Services</a>
-            <a href="#about" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-black hover:bg-[#f5f5f5] transition-all">About</a>
-            <a href="#contact" onClick={closeMenu} className="block px-3 py-2 rounded-md text-base font-medium text-black hover:bg-[#f5f5f5] transition-all">Contact</a>
-            <a href="#contact" onClick={closeMenu} className="block px-3 py-2 mt-4 rounded-md text-base font-medium bg-black text-white hover:bg-[#333333] transition-all">Get Started</a>
+        <div className={`md:hidden bg-white/95 backdrop-blur-sm border-t border-slate-200 transition-all duration-300 ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
+          <div className="pt-4 pb-6 space-y-3 px-4">
+            <button
+              onClick={() => scrollToSection('about')}
+              className="text-slate-600 hover:text-primary block py-3 text-base font-medium w-full text-left tracking-wider uppercase transition-colors duration-200"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection('services')}
+              className="text-slate-600 hover:text-primary block py-3 text-base font-medium w-full text-left tracking-wider uppercase transition-colors duration-200"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection('features')}
+              className="text-slate-600 hover:text-primary block py-3 text-base font-medium w-full text-left tracking-wider uppercase transition-colors duration-200"
+            >
+              Features
+            </button>
+            <button
+              onClick={() => scrollToSection('testimonials')}
+              className="text-slate-600 hover:text-primary block py-3 text-base font-medium w-full text-left tracking-wider uppercase transition-colors duration-200"
+            >
+              Testimonials
+            </button>
+            <Button
+              onClick={() => scrollToSection('contact')}
+              className="bg-accent hover:bg-accent/90 text-primary font-semibold w-full mt-4 py-3 text-sm tracking-wider uppercase"
+            >
+              Contact
+            </Button>
           </div>
         </div>
       </nav>

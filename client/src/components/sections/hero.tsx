@@ -1,61 +1,82 @@
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/animated-section";
 
 export default function Hero() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="pt-20 md:pt-0">
-      <div className="relative bg-[#f5f5f5] overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative z-10 py-8 sm:py-16 md:py-20 lg:py-28 lg:max-w-2xl lg:w-full">
-            <div className="sm:text-center lg:text-left">
-              <AnimatedSection variant="fadeInUp" duration={0.7}>
-                <h1 className="text-4xl tracking-tight font-bold text-black sm:text-5xl md:text-6xl">
-                  <span className="block">Simplified Commercial</span>
-                  <span className="block">Capital Solutions</span>
-                </h1>
-              </AnimatedSection>
-              
-              <AnimatedSection variant="fadeInUp" delay={0.2} duration={0.7}>
-                <p className="mt-3 text-base text-[#767676] sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  We provide tailored financing solutions for your commercial real estate and business funding needs with a streamlined, hassle-free approach.
-                </p>
-              </AnimatedSection>
-              
-              <AnimatedSection variant="fadeInUp" delay={0.4} duration={0.7}>
-                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div className="rounded-md shadow">
-                    <a href="#contact">
-                      <Button className="w-full px-8 py-3 md:py-4 md:text-lg md:px-10 bg-black hover:bg-[#333333] text-white">
-                        Get Financing
-                      </Button>
-                    </a>
-                  </div>
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <a href="#services">
-                      <Button variant="outline" className="w-full px-8 py-3 md:py-4 md:text-lg md:px-10 border-black text-black hover:bg-[#f5f5f5]">
-                        Our Services
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-              </AnimatedSection>
+    <section id="home" className="relative min-h-screen flex items-center justify-center luxury-gradient overflow-hidden">
+      {/* Elegant grid overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_35%,rgba(255,255,255,.1)_35%,rgba(255,255,255,.1)_65%,transparent_65%),linear-gradient(-45deg,transparent_35%,rgba(255,255,255,.1)_35%,rgba(255,255,255,.1)_65%,transparent_65%)] bg-[length:20px_20px]"></div>
+      </div>
+      
+      <div className="container-custom relative z-10">
+        <div className="text-center max-w-5xl mx-auto">
+          <AnimatedSection variant="fadeInUp" delay={0.2}>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+              <Sparkles className="w-4 h-4 gold-accent mr-2" />
+              <span className="text-white/90 text-sm font-medium tracking-wide">Premium Excellence</span>
             </div>
-          </div>
+          </AnimatedSection>
+          
+          <AnimatedSection variant="fadeInUp" delay={0.4}>
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold text-white mb-8 leading-tight">
+              Elevate Your{" "}
+              <span className="gold-accent italic">
+                Vision
+              </span>
+            </h1>
+          </AnimatedSection>
+          
+          <AnimatedSection variant="fadeInUp" delay={0.6}>
+            <p className="text-xl sm:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+              Where sophistication meets innovation. We craft extraordinary solutions 
+              that transform businesses and define industry standards.
+            </p>
+          </AnimatedSection>
+          
+          <AnimatedSection variant="fadeInUp" delay={0.8}>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90 text-primary font-semibold text-lg px-12 py-4 tracking-wider uppercase shadow-2xl hover:shadow-accent/25 transition-all duration-300"
+                onClick={() => scrollToSection('contact')}
+              >
+                Begin Journey
+                <ArrowRight className="ml-3 h-5 w-5" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-lg px-12 py-4 tracking-wider uppercase backdrop-blur-sm transition-all duration-300"
+                onClick={() => scrollToSection('about')}
+              >
+                Discover More
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
-        
-        <AnimatedSection 
-          variant="fadeInLeft" 
-          delay={0.3} 
-          duration={0.8} 
-          className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2"
-        >
-          {/* Commercial real estate building */}
-          <img 
-            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&h=800" 
-            alt="Commercial real estate building" 
-          />
-        </AnimatedSection>
+      </div>
+      
+      {/* Luxury geometric elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-white/10 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/5 rounded-full"></div>
+      </div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
+        <div className="w-px h-16 bg-gradient-to-b from-white/60 to-transparent mx-auto mb-2"></div>
+        <div className="text-xs tracking-widest uppercase">Scroll</div>
       </div>
     </section>
   );
